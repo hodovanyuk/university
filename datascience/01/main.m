@@ -8,11 +8,12 @@ plot(X,Y,'.');
 k = 20;
 min=10^31;
 plot(X,Y,'color',rand(1,3));
-for i=1:k
+for i=2:k
+  i
   temp = llsq(X,Y,i);
   if temp < min
    min = temp;
    min_i = i;
   end
-endfor
+end
 min_i
