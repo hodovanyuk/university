@@ -1,9 +1,10 @@
 function checkAndWrite()
-    global x,users,groupNames
-    global circleIdx, circleGroups
-    global DONE,SMALL_GROUP
-    global cUsers,cGroups
-% 
+%     global x,users,groupNames
+%     global circleIdx, circleGroups
+    global DONE;
+    global SMALL_GROUP;
+%     global cUsers,cGroups
+
 %     if( len( circleGroups ) >= x ):
 %         if( len( circleIdx ) > 1 ):
 %             users4print = [ users[ circleIdx[ i ] ] for i in range( 0,len( circleIdx ) ) ]
