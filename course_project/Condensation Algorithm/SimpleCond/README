@@ -1,0 +1,44 @@
+This is a trivial implementation of Condensation, designed for
+tutorial purposes.  Simulated data is generated modelling a particle
+moving in one dimension under the action of a first-order
+auto-regressive process with measurements corrupted by noise. The
+Condensation algorithm then tracks the particle using a model of the
+same form, and the state distribution is displayed at each timestep
+using an ASCII histogram, along with the estimated, true and measured
+particle positions. The estimated position is displayed as an 'x', the
+measured position a '+' and the true position a '.' - if any two
+coincide in the same character position a '*' is displayed there
+instead.
+
+To build the program, first edit the makefile. The default compiler is 
+`cc' and this can be changed if necessary. By default, the option
+-DANSI_TERM_SEQUENCES is sent to the compiler, which causes the
+program to generate control codes to scroll the cursor up the terminal 
+after each iteration and then sleep(1), resulting in an `animated'
+histogram. On a Windows machine, this option should be removed from
+the CCOPTS line of the makefile to allow successful compilation. When
+the makefile has been edited, type `make' and the executable
+`condense' will be produced. Now run `./condense'
+
+All of the parameters of the simulation and process models can be
+changed by altering model_parameters.h and recompiling.
+
+Files in the distribution:
+
+README               This file.
+makefile
+condensation.h       Declarations of external functions and variables.
+data_types.h         Declarations of data structures used.
+model_parameters.h   Constants specifying the process and observation
+                     models used.
+utility.c            Routines to generate Gaussian noise and evaluate
+                     a Gaussian density.
+model_specific.c     Routines for sampling from the process model,
+                     evaluating the observation density, generating
+                     simulated data and displaying the estimated
+                     distribution. These routines can be replaced by
+                     more complex models for a realistic application.
+condensation.c       The generic condensation algorithm. The routines
+                     in this file implement the basic condensation
+                     algorithm and can be used with any process or
+                     observation model.
