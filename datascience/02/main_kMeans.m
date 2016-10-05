@@ -1,7 +1,7 @@
 clc
 clear all
 %input data
-fileName = 'test.txt';
+fileName = '23.txt';
 X = makeDataFromFile(fileName,3,2);
 %actions with data
 nCluster = 3;

@@ -1,13 +1,9 @@
 function C = kNNMine( X,CL,y,k )
-% X - множина точок, розбитих по кластерам
-% CL - розбиття точок по кластерам
-% y - точка, що треба класифікувати
-% k - кількість точок, по яким визначати поточну
-% C - кластер, до якого належить точка
-
-%  y1 y2 y3      x11 x12 x13   
-%  y1 y2 y3      x21 x22 x23
-%  y1 y2 y3      x31 x32 x33
+% X - data
+% CL - data2cluster
+% y - the point of interest
+% k - the number of neighbors
+% C - predicted class of the point of interest
 
 m = size( X,1 );
 
