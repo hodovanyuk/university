@@ -1,6 +1,6 @@
 function makeLists
 
-    nusers2groups = 0;
+    users2groups = 0;
     iusers2groups = 0;
     global users2groups ;
     users2groups = [];
