@@ -21,7 +21,7 @@ end
 %second number
 
 base = 1;
-for i = 38:-1:27
+for i = 38:-1:29
     x(2) = x(2) + cr( i )*base;
     base = base * 2;
 end
@@ -32,6 +32,6 @@ for i = 39:54
     base = base / 2;
 end
 
-if( cr( 1 ) == 1 )
+if( cr( 28 ) == 1 )
     x(2) = -x(2);
 end

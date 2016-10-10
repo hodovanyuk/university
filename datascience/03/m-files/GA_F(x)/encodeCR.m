@@ -18,7 +18,7 @@ end
 % integer part
 y = floor( x(1) );
 y_tmp = y;
-idx = 11;
+idx = 12;
 while( y > 0 )
     idx = idx - 1;
     cr( idx ) = mod( y,2 );
@@ -27,8 +27,8 @@ end
 
 % non-integer part
 y = x(1) - y_tmp;
-idx = 12;
-while( idx < 28 )
+idx = 11;
+while( idx < 27 )
     idx = idx + 1;
     y = y * 2;
     i = floor( y );
@@ -49,7 +49,7 @@ end
 
 % non-integer part
 y = x(2) - y_tmp;
-idx = 39;
+idx = 38;
 while( idx < 54 )
     idx = idx + 1;
     y = y * 2;
