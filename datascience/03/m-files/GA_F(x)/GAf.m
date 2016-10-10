@@ -1,29 +1,36 @@
-function [ timeLineX,timeLineF,bestX ] = GAf( n )
+function [ timeLineX, timeLineY, timeLineF, bestX, bestY ] = GAf( n )
 
-population = zeros( n,26 );
+population = zeros( n,54 );
 populationFt = zeros( n,1 );
 
 iterations = 500;
 timeLineX = zeros( 1,iterations );
+timeLineY = zeros( 1,iterations );
 timeLineF = timeLineX;
 
 % generate start population
 for i = 1:n
-    x = rand( 1 ) * 2000 - 1000;
+    x(1) = rand( 1 ) * 2000 - 1000;
+    x(2) = rand( 1 ) * 2000 - 1000;
     populationFt( i ) = calcFitness( x );
     population( i,: ) = encodeCR( x );
 end
 [ maxf,idx ] = max( populationFt );
-timeLineX( 1 ) = decodeCR( population( idx,: ) );
+
+temp = decodeCR( population( idx,: ) );
+timeLineX( 1 ) = temp(1);
+timeLineY( 1 ) = temp(2);
 timeLineF( 1 ) = populationFt( idx );
+
 bestX = timeLineX( 1 );
+bestY = timeLineY( 1 );
 bestF = timeLineF( 1 );
 
 % main loop
 for i = 2:iterations
     % build next population
     j = 1;
-    population2 = zeros( n,26 );
+    population2 = zeros( n,54 );
     populationFt2 = zeros( n,1 );
     while( j < n )
         idx1 = revolverWheel( populationFt );
@@ -60,13 +67,16 @@ for i = 2:iterations
     population = population2;
     populationFt = populationFt2;
     [ maxf,idx ] = max( populationFt );
-    timeLineX( i ) = decodeCR( population( idx,: ) );
+    temp = decodeCR( population( idx,: ) );
+    timeLineX( i ) = temp(1);
+    timeLineY( i ) = temp(2);
     timeLineF( i ) = populationFt( idx );
     if( bestF < timeLineF( i ) )
         bestX = timeLineX( i );
+        bestY = timeLineY( i );
         bestF = timeLineF( i );
     end
-    i
+    
 end
 
 figure;
