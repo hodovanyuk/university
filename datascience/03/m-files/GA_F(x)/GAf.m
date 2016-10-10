@@ -3,7 +3,7 @@ function [ timeLineX, timeLineY, timeLineF, bestX, bestY ] = GAf( n )
 population = zeros( n,54 );
 populationFt = zeros( n,1 );
 
-iterations = 500;
+iterations = 1000;
 timeLineX = zeros( 1,iterations );
 timeLineY = zeros( 1,iterations );
 timeLineF = timeLineX;
