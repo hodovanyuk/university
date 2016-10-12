@@ -1,18 +1,18 @@
-2.1 Примитивы доступа к файлам в системе UNIX
+2.1 Primitives access files on a UNIX system
 
-Упражнение 2.1. Создайте небольшую программу, описанную выше. Проверьте ее работу при условии, что файл junk не существует. Затем создайте файл junk с помощью текстового  редактора и снова запустиете программу. Содержимое файла junk не имеют значения.
+Exercise 2.1. Create a small program described above. Check out her work, provided that the file junk does not exist. Then create a junk file with a text editor and again zapustite program. The contents of the file junk does not matter.
 
--- Без файла в каталоге --
+- No file in the directory --
 hodovanyuk:~/workspace/LR03 $ gcc 2_1.c
 
 hodovanyuk:~/workspace/LR03 $ ./a.out
- 
+
 There is no file hodovanyuk:~/workspace/LR03 $ 
 
 
--- С файлом в каталоге --
-Вывод: 0
+-- With a file in the directory --
+Output: 0
 
 
 
-2.3 Напишите небольшую программу которая сначала создает файл при помощи вызова creat, затем, не вызывая close, сразу же открывает его при помощи системного вызова open для чтения в одном случае и записи в другом. В обоих случаях сообщение о успешном или неуспешном завершении
+2.3 Write a small program that creates the file first using the creat call, then not calling close immediately opens it using the system call open read-in one case, and write in another. In both cases use printf() to print the message about success or failure.
