@@ -1,0 +1,39 @@
+# Gordon D has asked for the committee pages not to be indexed.
+
+User-agent: *
+Disallow: /admin/committees/
+Disallow: /outreach/schools/reports/
+Disallow: /resources/
+# RT 54608
+Disallow: /teaching/courses/ccs/assignments.html
+Disallow: /teaching/courses/ccs/assignments/
+# RT 69583 - could be removed once google has removed from cache
+Disallow: /admin/ITO/ar-tuts.html
+Disallow: /admin/ITO/freshers-dos-0304.pdf
+Disallow: /admin/ITO/freshers_dos_0506.pdf
+Disallow: /admin/ITO/geo03.html
+Disallow: /admin/ITO/geography04.html
+Disallow: /admin/ITO/hci-pracs.html
+Disallow: /admin/ITO/iar-labs.html
+Disallow: /admin/ITO/icl-labs.html
+Disallow: /admin/ITO/ijp-labs.html
+Disallow: /admin/ITO/inf.html
+Disallow: /admin/ITO/inf03.html
+Disallow: /admin/ITO/inf04.html
+Disallow: /admin/ITO/inf1dropin.html
+Disallow: /admin/ITO/inf3.html
+Disallow: /admin/ITO/informatics.html
+Disallow: /admin/ITO/informatics03.html
+Disallow: /admin/ITO/informatics04.html
+Disallow: /admin/ITO/informatics_freshers_dos_0405.pdf
+Disallow: /admin/ITO/irm-5-pres.html
+Disallow: /admin/ITO/jackson_directees0304.html
+Disallow: /admin/ITO/ling.html
+Disallow: /admin/ITO/ling04.html
+Disallow: /admin/ITO/pmr-tuts.html
+Disallow: /admin/ITO/projbook.html
+Disallow: /admin/ITO/shen_directees0304.html
+# RT 74476
+Disallow: /teaching/courses/anlp/assignments/assign2_sol.html
+Disallow: /teaching/courses/anlp/assignments/ass2_sol.py
+Disallow: /teaching/courses/anlp/assignments/cky_sol.py

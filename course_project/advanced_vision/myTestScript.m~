@@ -1,0 +1,9 @@
+Im0 = im2double(imread('DATA/ball00000100.jpg','jpg'));
+Im1 = im2double(imread('DATA/ball00000101.jpg','jpg'));
+Im2 = im2double(imread('DATA/ball00000102.jpg','jpg'));
+Im3 = im2double(imread('DATA/ball00000103.jpg','jpg'));
+Im4 = im2double(imread('DATA/ball00000104.jpg','jpg'));
+R =  im2double(imread('DATA/ball00000114.jpg','jpg'));
+Imback = (Im0 + Im1 + Im2 + Im3 + Im4)/5;
+
+[MR,MC,Dim] = size(Imback);

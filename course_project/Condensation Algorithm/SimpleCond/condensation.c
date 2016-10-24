@@ -3,9 +3,7 @@
 
 #include "data_types.h"
 #include "model_parameters.h"
-#include "condensation.h"
-
-/* All of the global information is packaged into the following two
+#include "condensation.h"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
    structures. `global' contains information which is constant over a
    run of the algorithm and `data' contains all of the current state
    at a given iteration. */
