@@ -1,9 +1,9 @@
 function henon_model
-a =1.4;
-b =0.3;
+a =0.2;
+b =-0.9999;
 xn =0;
 yn =0;
-N =1000;
+N =10000;
 X = zeros(N, 1);
 Y = zeros(N, 1);
 for i=1:N
@@ -18,4 +18,5 @@ figure
 plot(X, Y,'.')
 xlabel('x')
 ylabel('y')
+legend('a = 0.2 b= -0.9999')
 end
