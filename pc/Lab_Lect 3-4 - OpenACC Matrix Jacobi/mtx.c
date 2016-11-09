@@ -21,8 +21,7 @@ int main(int argc, char *argv[]) {
          b[i][j] = (double)(i-j);
      }     
 
-   t_start = omp_get_wtime();
-
+ 
    //#pragma omp parallel for shared(a, b, c, N) private(i, j, k, sum)
   #pragma acc data copyin(a[0:N][0:N],b[0:N][0:N]) copy(c[0:N][0:N])
     {
@@ -42,9 +41,8 @@ int main(int argc, char *argv[]) {
     }
    
 
-   t_end = omp_get_wtime();
 
-   printf("%10ld %20.15lf\n", N, t_end - t_start);  
+
 
    free_dmatrix(c);
    free_dmatrix(b);

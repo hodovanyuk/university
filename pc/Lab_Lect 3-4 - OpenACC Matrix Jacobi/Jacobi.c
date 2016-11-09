@@ -2,11 +2,12 @@
 #include <omp.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(int argc, char** argv)
 {
-    int n = 4096;
-    int m = 4096;
+    int n = 1024;
+    int m = 1024;
     int iter_max = 1000;
     
     const float pi  = 2.0f * asinf(1.0f);
@@ -79,7 +80,5 @@ int main(int argc, char** argv)
         iter++;
     }
 
-    double runtime = GetTimer();
- 
-    printf(" total: %f s\n", runtime / 1000.f);
+
 }
