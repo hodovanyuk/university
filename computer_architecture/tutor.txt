@@ -1,3 +1,0 @@
-tasm -> .asm
-tlink -> .obj
-run -> .exe

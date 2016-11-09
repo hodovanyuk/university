@@ -1,0 +1,28 @@
+% drugs model
+
+function drugs_model
+
+dt = 0.1;
+N =  240;
+t(1) = 0;
+
+I = 1/24; % The rate of absorption of drugs from the gastrointestinal tract into the bloodstream g
+
+X(1) = 0.0001; % drugs coeficient
+Y(1) = 0;   % the concentration of drugs in the blood
+
+k1 = 0.72; % factor from the gastrointestinal tract into the blood
+k2 = 0.15;  % coefficient of withdrawal of the drug
+
+for i = 1:N 
+    X( i+1 ) = X( i ) + ( I - k1 * X( i ) ) * dt;
+    Y( i+1 ) = Y( i ) + ( k1 * X( i ) - k2 * Y( i ) ) * dt;
+    t( i+1 ) = t( i ) + dt;
+end
+
+grid on
+hold on
+
+plot( t, X, '.b' )      % in the digestive tract
+
+plot( t, Y, '*r' )      % blood   

@@ -1,9 +1,0 @@
-Компіляція GPU версії за допомогою компілятора PGI командою:
-
-gcc program.c -acc -Minfo=accel -o prog_gpu
-або
-gcc program.c -acc -Minfo=accel -ta=nvidia -o prog_gpu 
-
-Компіляція GPU(OpenACC)/CPU(OpenMP) версії за допомогою компілятора PGI командою:
-
-gcc program.c -acc -Minfo=accel -mp -o prog_cpu

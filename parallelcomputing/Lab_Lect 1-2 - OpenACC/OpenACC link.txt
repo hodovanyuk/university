@@ -1,1 +1,0 @@
-http://devblogs.nvidia.com/parallelforall/getting-started-openacc/
