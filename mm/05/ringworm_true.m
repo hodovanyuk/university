@@ -30,7 +30,7 @@ for k=1:100
                     
                     for x=i-1:i+1
                         for y=j-1:j+1
-                            if rand()<0.5 & old(x,y)==0
+                            if rand()<0.3 && old(x,y)==0
                                 new(x,y) = 1;
                                 
                             end
@@ -57,6 +57,6 @@ for k=1:100
     set(imh, 'cdata', cat(3,(old==1),(old==0),(old==2)))
     drawnow
     old = new;
-    pause (0.2)
+    pause (0.9)
 end
 

@@ -9,8 +9,14 @@ cells = z;
 sum = z;    
 
 % задаем начальную конфигурацию
-cells(n/2,.25*n:.75*n) = 1;
-cells(.25*n:.75*n,n/2) =1 ;
+%cells(n/2,.25*n:.75*n) = 1;
+%cells(.25*n:.75*n,n/2) =1 ;
+
+cells(2, 3) = 1;
+cells(3 ,4) = 1;
+cells(4 ,2) = 1;
+cells(4 ,3) = 1; 
+cells(4 ,4) = 1;
 
 %cells = (rand(n,n))<.5;
 
@@ -28,7 +34,7 @@ y= 2:n-1;
 
 
 % проверяем правило
-for i=1:3000
+for i=1:100
     sum(x,y) = cells(x, y-1)  +cells(x,y+1)+...
                cells(x-1, y)  +cells(x+1,y)+...
                cells(x-1, y-1)+cells(x-1,y+1)+...
@@ -37,5 +43,5 @@ for i=1:3000
     cells = (sum==3)|(sum==2 & cells);
     set(imh,'cdata',cat(3,z,cells,z))
     drawnow
-    pause(0.2);
+    pause(.9);
 end

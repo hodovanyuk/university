@@ -8,7 +8,7 @@ clear all
 
 n=100;
 
-Plightning = .000005;
+Plightning = .000015;
 Pgrowth = .01; %.01
 
 z=zeros(n,n);
