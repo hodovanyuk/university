@@ -9,17 +9,17 @@ Y = [1.6 1.4 1.4 1.6 1.7 2 1.7 2.1];
 %init
 w = [0.5 0.5];
 eta = 0.3;
-% for step=1:10
+for step=1:10
     for i= 1:nX
-        t = w(1)*X(1)+w(2);
+        t = w(1)*X(i)+w(2);
 
-        gama = t - Y(1);
+        gama = Y(i) - t;
 
-        dw = eta*gama*[X(1) 1];
+        dw = eta*gama*[X(i) 1];
 
         w = w + dw;
     end
-% end
+end
 x = 0:(X(nX)-X(1))/nX:X(nX);
 y = x*w(1)+w(2);
 grid on
