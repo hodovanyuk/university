@@ -1,0 +1,17 @@
+
+CR      EQU 13
+LF      EQU 10
+
+print   macro name
+        mov AH,09h 
+        mov DX,offset name
+        int 21h
+endm
+
+newline macro
+        mov AH,2
+        mov DL,CR
+        int 21h
+        mov DL,LF
+        int 21h
+endm
