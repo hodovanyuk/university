@@ -1,39 +1,17 @@
 clc;clear all;close all;
-% old = zeros(N,N);
-% new = zeros(N,N);
-% 
-% old(N/2,N/2) = 1;
-% imh = image(cat(3,old,old,old));
-% while true
-%     for i = 1 : N
-%         for j = 1 : N
-%             if old(i,j)==1
-%                 x_n = i;
-%                 y_n = j+1;
-%                 if y_n > 64
-%                     y_n = 1;
-%                 end
-%                 
-%                 new(x_n,y_n) = 1;
-%             end
-% 
-%         end
-%     end
-%     old = new;
-%     new = zeros(N,N);
-%     set(imh,'cdata',cat(3,old,old,old))
-%     drawnow
-%     pause(.1);
-% end
 % init
-N = 64;
+N = 164;
 old = zeros(N,N);
 new = old;
 f_step = @(t)[cos(deg2rad(t)),sin(deg2rad(t));-sin(deg2rad(t)),cos(deg2rad(t))];
-fbreed = 3;
+fbreed = 1;
 nstarve = 6;
-sbreed = 2;
-energy_point = 1;
+sbreed = 1;
+energy_point = 4;
+% fbreed = 1;
+% nstarve = 6;
+% sbreed = 1;
+% energy_point = 4;
 % add sharks and fishes with rand age
 for i=1:N
     for j=1:N
@@ -49,8 +27,8 @@ for i=1:N
 end
 old(1,1) = -1;
 old(1,2) = 1;
-imh = image(cat(3,(old==0),(old<0),(old>0)));
-pause(.5);
+imh = image(cat(3,(old<0),(old>0),old));
+  pause(3.9);
 while true
 % for step =1:2
     for i=1:N
@@ -130,7 +108,7 @@ while true
                         if ~isempty(pos)
                             % there are free places around shark
                             rand_idx = round((length(pos)-1)*rand + 1);
-                             new(new_idx(pos(rand_idx), 1),new_idx(pos(rand_idx), 2)) = old(i,j) - 1;
+                            new(new_idx(pos(rand_idx), 1),new_idx(pos(rand_idx), 2)) = old(i,j) - 1;
                         else
                             % there is no free places around shark, it will
                             % stay on the same place
@@ -146,7 +124,7 @@ while true
     end
     old = new;
     new = zeros(N,N);
-    set(imh,'cdata',cat(3,(old==0),(old<0),(old>0)))
+    set(imh,'cdata',cat(3,(old<0),(old>0),old))
     drawnow
-    pause(.5);
+    pause(1.5);
 end
