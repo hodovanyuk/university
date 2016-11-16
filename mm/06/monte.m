@@ -1,8 +1,9 @@
 clc;clear all;close all;
 % init
-N = 30;
+N = 100;
 old = zeros(N,N);
 T = 300;
+c = .25;
 fiaa = -2e-20;
 fibb = -3e-20;
 % uporyadivachinie
@@ -17,16 +18,24 @@ ffi = @(i1, j1, i2, j2) (1/4)*((1+(old(i1,j1)/...
     old(i2,j2))*fibb) + 2*(old(i1,j1)-old(i2,j2)*(old(i1,j1)/...
     (abs(old(i1,j1))))*fiab));
 % dobavlyam atomi dvuh grup
-% for i=1:N
-%     for j=1:N
-%         if rand>0.5
-%             old(i,j) = 1;
-%         else
-%             old(i,j) = -1;
-%         end
-%     end
-% end
-c = round(N / c);
+c = round(N*c);
+while c>0
+    for i=1:N
+        for j=1:N
+            if rand>0.5
+                old(i,j)=-1;
+                c = c-1;
+            end
+        end
+    end
+end
+for i=1:N
+    for j=1:N
+        if old(i,j)==0
+            old(i,j) = 1;
+        end
+    end
+end
 imh = image(cat(3,(old==0),(old<0),(old>0)));
 pause(.5);
 while true
