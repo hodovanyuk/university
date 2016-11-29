@@ -1,0 +1,1 @@
+Rp(1:n_nodes_of_el,1)=-1;

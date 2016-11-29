@@ -118,7 +118,7 @@ void print_to_file(long int n, double **a) {
 	FILE *fp;       
 	char buf[20];
 
-	  sprintf(buf, "data_%d.xyz", n/1);
+	  sprintf(buf, "data_%lu.xyz", n/1);
 
 	  fp = fopen(buf, "w"); 
 	  if (fp == NULL) {
@@ -126,7 +126,7 @@ void print_to_file(long int n, double **a) {
 		 exit(1);
 	  }
 
-	  fprintf(fp,"%d\n", N_all);
+	  fprintf(fp,"%lu\n", N_all);
       fprintf(fp,"ITEM: ATOMS id xs ys zs\n");
 
 
