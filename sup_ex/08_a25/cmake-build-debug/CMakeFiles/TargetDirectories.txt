@@ -1,3 +1,0 @@
-/Users/matviihodovaniuk/Documents/university/sup_ex/08_a25/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/matviihodovaniuk/Documents/university/sup_ex/08_a25/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/matviihodovaniuk/Documents/university/sup_ex/08_a25/cmake-build-debug/CMakeFiles/08_a25.dir
